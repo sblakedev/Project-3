@@ -25,7 +25,7 @@ def welcome():
     print("If your letter is correct, your points will increase by one.")
     print("If your letter is incorrect, you will lose a life.")
     
-    name_str = input("Please enter your name: ")
+    name_str = input("Please enter your name:\n")
     print(f"Hello {name_str}. Let's play Hangman!")
     
 
