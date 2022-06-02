@@ -7,7 +7,7 @@ SCOPE = [
     "https://www.googleapis.com/auth/drive"
     ]
 
-CREDS = Credentials.from_service_account_file('creds.creds.json')
+CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('hangman')
@@ -17,3 +17,20 @@ words = SHEET.worksheet('words')
 data = words.get_all_values()
 
 print(data)
+
+start_game
+
+random_word_selector
+
+guess_letter
+
+check_letter
+
+draw_hangman
+
+lose_life
+
+guess_all_letters
+
+play_again
+
