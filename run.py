@@ -35,12 +35,21 @@ def welcome():
   
 
 def random_word_selector():
+    """
+    Retrieves a random word from the list of words document
+    """
+    list_of_words = SHEET.worksheet('words')
+    secret_word = random.choice(list_of_words)
+    print("Your 5 letter word is: _____")
+    return secret_word
 
 def main():
     """
     Run all program functions
     """
     welcome()
+
+main()
 
 
 """start_game
