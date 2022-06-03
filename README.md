@@ -152,6 +152,8 @@ g. As a visitor, I want to be able to easily get in contact with the site creato
 * After entering username and getting user validation, program asks for username again
     * Put a break in to if statement in while loop.
 
+* TypeError: object of type 'Worksheet' has no len()
+
 #### Lighthouse Report
 ![Lightouse Report](assets/images/readme/LighthouseReport.PNG)
 

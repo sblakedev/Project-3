@@ -38,16 +38,27 @@ def random_word_selector():
     """
     Retrieves a random word from the list of words document
     """
-    list_of_words = SHEET.worksheet('words')
+    list_of_words = SHEET.worksheet('words').get_all_values()
     secret_word = random.choice(list_of_words)
-    print("Your 5 letter word is: _____")
-    return secret_word
+    print("Your word is: _____")
+
+def user_guess():
+    """
+    Allows the user to input a guess
+    """
+    guess = input(f"{name}, please pick a letter:\n")
 
 def main():
     """
     Run all program functions
     """
     welcome()
+    random_word_selector()
+
+def validate_guess(values):
+    """
+    Checks if the user's guess is in the secret word.
+    """
 
 main()
 
