@@ -26,12 +26,13 @@ def welcome():
     print("If your letter is incorrect, you will lose a life.")
     
     while True:
-        global name = input("Please enter your name:\n")
+        name = input("Please enter your name:\n")
         if name.isalpha():
             print(f"Hello {name}. Let's play Hangman!")
             break
         else:
             print("Your name can only use letters. Please try again.")
+        return name
   
 
 def random_word_selector():
@@ -41,12 +42,20 @@ def random_word_selector():
     list_of_words = SHEET.worksheet('words').get_all_values()
     secret_word = random.choice(list_of_words)
     print("Your word is: _____")
+    print(secret_word)
 
-def user_guess():
+    guess = input("please pick a letter:\n")
+    for letters in secret_word:
+        if guess == letters:
+            print(f"Correct! {guess} is in the word!")
+        else:
+            print(f"Sorry! You lose a life. {guess} is not in the word.")
+
+
+def validate_guess(values):
     """
-    Allows the user to input a guess
+    Checks if the user's guess is in the secret word.
     """
-    guess = input(f"{name}, please pick a letter:\n")
 
 
 def main():
@@ -55,11 +64,9 @@ def main():
     """
     welcome()
     random_word_selector()
+    
 
-def validate_guess(values):
-    """
-    Checks if the user's guess is in the secret word.
-    """
+
 
 main()
 
