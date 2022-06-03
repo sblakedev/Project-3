@@ -34,11 +34,13 @@ def welcome():
             print("Your name can only use letters. Please try again.")
   
 
-welcome()
+def random_word_selector():
+
+def main():
+    welcome()
+
 
 """start_game
-
-random_word_selector
 
 guess_letter
 
