@@ -37,6 +37,9 @@ def welcome():
 def random_word_selector():
 
 def main():
+    """
+    Run all program functions
+    """
     welcome()
 
 
