@@ -26,7 +26,7 @@ def welcome():
     print("If your letter is incorrect, you will lose a life.")
     
     while True:
-        name = input("Please enter your name:\n")
+        global name = input("Please enter your name:\n")
         if name.isalpha():
             print(f"Hello {name}. Let's play Hangman!")
             break
@@ -47,6 +47,7 @@ def user_guess():
     Allows the user to input a guess
     """
     guess = input(f"{name}, please pick a letter:\n")
+
 
 def main():
     """
