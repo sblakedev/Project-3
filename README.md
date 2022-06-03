@@ -144,6 +144,13 @@ g. As a visitor, I want to be able to easily get in contact with the site creato
         When the play again button is clicked, the user should be taken back to the welcome area with all scores and results refreshed.
     * Testing
         When the play again button is clicked, the user is taken back to the welcome area. When the start button is clicked, all scores and results have been refreshed.
+#### Bugs
+* ModuleNotFoundError: No module named 'gspread'
+    * Install new version of pip (pip-22.1.2)
+    * Install gspread.
+
+* After entering username and getting user validation, program asks for username again
+    * Put a break in to if statement in while loop.
 
 #### Lighthouse Report
 ![Lightouse Report](assets/images/readme/LighthouseReport.PNG)

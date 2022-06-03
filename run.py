@@ -25,9 +25,14 @@ def welcome():
     print("If your letter is correct, your points will increase by one.")
     print("If your letter is incorrect, you will lose a life.")
     
-    name_str = input("Please enter your name:\n")
-    print(f"Hello {name_str}. Let's play Hangman!")
-    
+    while True:
+        name = input("Please enter your name:\n")
+        if name.isalpha():
+            print(f"Hello {name}. Let's play Hangman!")
+            break
+        else:
+            print("Your name can only use letters. Please try again.")
+  
 
 welcome()
 
