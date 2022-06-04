@@ -18,9 +18,12 @@ SHEET = GSPREAD_CLIENT.open('hangman')
 list_of_words = SHEET.worksheet('words').get_all_values()
 secret_word = random.choice(list_of_words)
 lives = 7
-guesses = 0
+guessed = 0
 guessed_letters = []
 game_over = False
+
+guesses = ["_ "] * len(secret_word)
+print(guesses)
 
 def welcome():
     """
@@ -33,14 +36,12 @@ def welcome():
     print("You will have 7 lives.")
     print("If your letter is correct, your points will increase by one.")
     print("If your letter is incorrect, you will lose a life.")
-    
-    while True:
-        name = input("Please enter your name:\n")
-        if name.isalpha():
-            print(f"Hello {name}. Let's play Hangman!")
-            break
-        else:
-            print("Your name can only use letters. Please try again.")
+      
+    name = input("Please enter your name:\n")
+    if name.isalpha():
+        print(f"Hello {name}. Let's play Hangman!")
+    else:
+        print("Your name can only use letters. Please try again.")
         return name
   
 
@@ -49,9 +50,7 @@ def random_word_selector():
     Retrieves a random word from the list of words document
     """
     print("Your word is: _____")
-    print(secret_word)
-
-    while len(secret_word) > 0 and lives > 0:
+    print(secret_word)  #test
 
     guess = input("please pick a letter:\n")
     for letter in range(len(secret_word)):
