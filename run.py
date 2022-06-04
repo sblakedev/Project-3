@@ -1,6 +1,8 @@
+#import additional functions
 import gspread
 from google.oauth2.service_account import Credentials
 import random
+from IPython.display import clear_output
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -15,6 +17,7 @@ SHEET = GSPREAD_CLIENT.open('hangman')
 guesses = 0
 list_of_words = SHEET.worksheet('words').get_all_values()
 secret_word = random.choice(list_of_words)
+lives = 7
 
 def welcome():
     """
@@ -44,6 +47,8 @@ def random_word_selector():
     """
     print("Your word is: _____")
     print(secret_word)
+
+    while len(secret_word) > 0 and lives > 0:
 
     guess = input("please pick a letter:\n")
     for letter in range(len(secret_word)):
