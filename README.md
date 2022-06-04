@@ -146,7 +146,7 @@ g. As a visitor, I want to be able to easily get in contact with the site creato
         When the play again button is clicked, the user is taken back to the welcome area. When the start button is clicked, all scores and results have been refreshed.
 #### Bugs
 * ModuleNotFoundError: No module named 'gspread'
-    * Install new version of pip (pip-22.1.2)
+    * Install new version of pip (pip-22.1.2) - python -m pip install --upgrade pip
     * Install gspread.
 
 * After entering username and getting user validation, program asks for username again
@@ -200,7 +200,7 @@ To make a local clone, the following steps are to be used.
 ### Credits
 #### Code
   * CSS grid help: css-tricks.com and https://codepen.io/mogpt/pen/ebXdzg
-  * JavaScript guidance and some code from Build a Quiz App with HTML, CSS, and JavaScript Udemy video by [James Quick](https://www.udemy.com/course/build-a-quiz-app-with-html-css-and-javascript/)
+  * Python guidance and some code from The Python Workshop for Beginners Part 2 Udemy video by [XXX](https://www.udemy.com/course/the-python-workshop-for-beginners-part-2/learn/lecture/21928888#overview)
   * Boilerplate code came from [Code Institute](https://github.com/Code-Institute-Org/gitpod-full-template/tree/main/.vscode)
   * Most issues in the code were resolved by searching through [Stack Overflow](https://stackoverflow.com/) and [W3Schools](https://www.w3schools.com/)
 

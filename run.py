@@ -12,6 +12,9 @@ CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('hangman')
+guesses = 0
+list_of_words = SHEET.worksheet('words').get_all_values()
+secret_word = random.choice(list_of_words)
 
 def welcome():
     """
@@ -39,14 +42,12 @@ def random_word_selector():
     """
     Retrieves a random word from the list of words document
     """
-    list_of_words = SHEET.worksheet('words').get_all_values()
-    secret_word = random.choice(list_of_words)
     print("Your word is: _____")
     print(secret_word)
 
     guess = input("please pick a letter:\n")
-    for letters in secret_word:
-        if guess == letters:
+    for letter in range(len(secret_word)):
+        if letter in secret_word:
             print(f"Correct! {guess} is in the word!")
         else:
             print(f"Sorry! You lose a life. {guess} is not in the word.")
