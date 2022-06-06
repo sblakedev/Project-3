@@ -15,15 +15,6 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('hangman')
 
-list_of_words = SHEET.worksheet('words').get_all_values()
-secret_word = random.choice(list_of_words)
-lives = 7
-guessed = 0
-guessed_letters = []
-game_over = False
-
-guesses = ["_ "] * len(secret_word)
-print(guesses)
 
 def welcome():
     """
@@ -36,7 +27,7 @@ def welcome():
     print("You will have 7 lives.")
     print("If your letter is correct, your points will increase by one.")
     print("If your letter is incorrect, you will lose a life.")
-      
+
     name = input("Please enter your name:\n")
     if name.isalpha():
         print(f"Hello {name}. Let's play Hangman!")
@@ -45,35 +36,50 @@ def welcome():
         return name
   
 
-def random_word_selector():
+def play_game():
     """
-    Retrieves a random word from the list of words document
+    Retrieves a random word from the list of words document.
+    Gets user input and validates input.
+    If guess is correct, increase score by 1.
+    If guess is incorrect, decrease lives by 1.
     """
-    print("Your word is: _____")
-    print(secret_word)  #test
+    list_of_words = SHEET.worksheet('words').get_all_values()
+    secret_word = random.choice(list_of_words)
+    print(secret_word)  # test
+    lives = 7
+    guessed = 0
+    guessed_letters = []
+    game_over = False
 
-    guess = input("please pick a letter:\n")
+    guesses = ("_ ") * len(secret_word)
+    print(guesses)  # test
+    
+    print(secret_word)  # test
+
+    while not game_over:
+        #output game information
+        secret_word = "".join(guesses)
+        print("Word to guess: {}".format(secret_word))
+        print("Lives: {}".format(lives))
+        guess = input("Type quit or guess a letter:\n").lower()
+        if guess == "quit":
+            print("Thanks for playing!")
+            game_over = True
+
+
     for letter in range(len(secret_word)):
-        if letter in secret_word:
+        if letter in str(secret_word):
             print(f"Correct! {guess} is in the word!")
         else:
             print(f"Sorry! You lose a life. {guess} is not in the word.")
-
-
-def validate_guess(values):
-    """
-    Checks if the user's guess is in the secret word.
-    """
-
+    
 
 def main():
     """
     Run all program functions
     """
     welcome()
-    random_word_selector()
-    
-
+    play_game()    
 
 
 main()
