@@ -65,6 +65,18 @@ def play_game():
 
     guessed_letters.append(guess)
 
+    if guess in secret_word:
+        print(f"Correct! {guess} is in the word!")
+
+    new_guesses = ""
+    for letter in range(len(secret_word)):
+        if guess == secret_word[letter]:
+            new_guesses += guess
+        else:
+            new_guesses += 
+
+
+
     while not game_over:
         #output game information
         secret_word = "".join(guesses)
