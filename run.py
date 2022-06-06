@@ -47,14 +47,23 @@ def play_game():
     secret_word = random.choice(list_of_words)
     print(secret_word)  # test
     lives = 7
+    wrong_guesses = 0
     guessed = 0
     guessed_letters = []
     game_over = False
 
-    guesses = ("_ ") * len(secret_word)
+    guesses = "_ " * len(secret_word)
     print(guesses)  # test
     
     print(secret_word)  # test
+
+    guess = input("Please guess a letter:\n").lower()
+
+    while guess in guessed_letters:
+        print("You've already guessed that letter", guess)
+        guess = input("Please guess a letter:\n").lower()
+
+    guessed_letters.append(guess)
 
     while not game_over:
         #output game information
