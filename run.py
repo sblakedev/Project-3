@@ -76,6 +76,14 @@ def play_game():
             lives -= 1
             wrong_guesses += 1
 
+        guess = new_guesses
+    else:
+        print("Sorry, that letter is wrong. You lose a life")
+        lives -= 1
+        wrong_guesses += 1
+
+if lives == 0:
+    print("You have been hanged")
 
 def main():
     """
