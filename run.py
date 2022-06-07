@@ -1,7 +1,7 @@
-#import additional functions
+# import additional functions
+import random
 import gspread
 from google.oauth2.service_account import Credentials
-import random
 from IPython.display import clear_output
 
 SCOPE = [
@@ -34,7 +34,7 @@ def welcome():
     else:
         print("Your name can only use letters. Please try again.")
         return name
-  
+
 
 def play_game():
     """
@@ -54,13 +54,12 @@ def play_game():
 
     guesses = "_ " * len(secret_word)
     print(guesses)  # test
-    
     print(secret_word)  # test
 
     guess = input("Please guess a letter:\n").lower()
 
     while guess in guessed_letters:
-        print("You've already guessed that letter", guess)
+        print("You've already guessed that letter. Try again.", guess)
         guess = input("Please guess a letter:\n").lower()
 
     guessed_letters.append(guess)
@@ -69,54 +68,21 @@ def play_game():
         print(f"Correct! {guess} is in the word!")
 
     new_guesses = ""
-    for letter in range(len(secret_word)):
+    for letter in enumerate(secret_word):
         if guess == secret_word[letter]:
             new_guesses += guess
         else:
-            new_guesses += 
+            new_guesses += guessed_letters[letter]
+            lives -= 1
+            wrong_guesses += 1
 
-
-
-    while not game_over:
-        #output game information
-        secret_word = "".join(guesses)
-        print("Word to guess: {}".format(secret_word))
-        print("Lives: {}".format(lives))
-        guess = input("Type quit or guess a letter:\n").lower()
-        if guess == "quit":
-            print("Thanks for playing!")
-            game_over = True
-
-
-    for letter in range(len(secret_word)):
-        if letter in str(secret_word):
-            print(f"Correct! {guess} is in the word!")
-        else:
-            print(f"Sorry! You lose a life. {guess} is not in the word.")
-    
 
 def main():
     """
     Run all program functions
     """
     welcome()
-    play_game()    
-
+    play_game()
 
 main()
-
-
-"""start_game
-
-guess_letter
-
-check_letter
-
-draw_hangman
-
-lose_life
-
-guess_all_letters
-
-play_again"""
 
