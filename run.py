@@ -1,7 +1,7 @@
-# import additional functions
-import random
+#import additional functions
 import gspread
 from google.oauth2.service_account import Credentials
+import random
 from IPython.display import clear_output
 
 SCOPE = [
@@ -34,7 +34,7 @@ def welcome():
     else:
         print("Your name can only use letters. Please try again.")
         return name
-
+  
 
 def play_game():
     """
@@ -54,6 +54,7 @@ def play_game():
 
     guesses = "_ " * len(secret_word)
     print(guesses)  # test
+    
     print(secret_word)  # test
 
     guess = input("Please guess a letter:\n").lower()
@@ -68,29 +69,36 @@ def play_game():
         print(f"Correct! {guess} is in the word!")
 
     new_guesses = ""
-    for letter in enumerate(secret_word):
+    for letter in range(len(secret_word)):
         if guess == secret_word[letter]:
             new_guesses += guess
         else:
             new_guesses += guessed_letters[letter]
-            lives -= 1
-            wrong_guesses += 1
+            lives
 
-        guess = new_guesses
-    else:
-        print("Sorry, that letter is wrong. You lose a life")
-        lives -= 1
-        wrong_guesses += 1
-
-if lives == 0:
-    print("You have been hanged")
 
 def main():
     """
     Run all program functions
     """
     welcome()
-    play_game()
+    play_game()    
+
 
 main()
+
+
+"""start_game
+
+guess_letter
+
+check_letter
+
+draw_hangman
+
+lose_life
+
+guess_all_letters
+
+play_again"""
 
