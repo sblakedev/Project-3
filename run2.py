@@ -29,7 +29,7 @@ def get_valid_word(words):
 def hangman():
     list_of_words = SHEET.worksheet('words').get_all_values()
     secret_word = random.choice(list_of_words)
-    secret_letters = set(word) # letters in the word
+    secret_letters = set(secret_word) # letters in the word
     alphabet = set(string.ascii_lowercase)
     used_letters = set() # what the user has guessed
     lives = 7
@@ -69,5 +69,5 @@ def hangman():
         print('You guessed the word', secret_word, '!')
 
    
-get_valid_word()
-hangman()
+if __name__ == '__main__':
+    hangman()
