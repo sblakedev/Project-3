@@ -18,11 +18,10 @@ SHEET = GSPREAD_CLIENT.open('hangman')
 
 list_of_words = SHEET.worksheet('words').get_all_values()
 word = random.choice(list_of_words)
-word_letters = set(word)
+word_letters = set(word) # letters in the word
 alphabet = set(string.ascii_uppercase)
-lives = 7
-score = 0
-used_letters = set()
+
+used_letters = set() # letters that have been guessed
 
 def play_game():
     """
@@ -30,6 +29,10 @@ def play_game():
     Explains how to play the game. 
     Asks user to enter their name.
     """
+    
+    lives = 7
+    score = 0
+    
     print("Welcome to Hangman!")
     print("To play, guess the letters in a random 5 letter word.")
     print("You will have 7 lives.")
@@ -47,14 +50,26 @@ def play_game():
     for letter in word:
         secret_word = "_"*len(letter)
         print("Your word is", secret_word)
+        
+        if letter in used_letters:
+            print(secret_word)
+    word_list = [letter if letter in used_letters else '-' for letter in word]
+    print('Current word: ', ' '.join(word_list))
     
     # Ask user for guess    
     guess = input("Please guess a letter:\n").lower()
     
     if guess in word:
         used_letters.add(guess)
-        print("Correct!", guess "is in the word!")
+        print("Correct!", guess, "is in the word!")
         score += 1
+        print("Your score is:", score)
+    else:
+        used_letters.add(guess)
+        print("Sorry!", guess, "is not in the word.")
+        print("You lose a life.")
+        lives -= 1
+        print("Your score is:", score)
     
     print(used_letters)
         
