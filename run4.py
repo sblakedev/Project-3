@@ -19,8 +19,11 @@ list_of_words = SHEET.worksheet('words').get_all_values()
 word = random.choice(list_of_words)
 word_letters = set(word)
 lives = 7
+used_letters = set()
 
 def play_game():
+    
+    # Print dashes instead of letters for secret word
     for letter in word:
         secret_word = "_"*len(letter)
         print(secret_word)
