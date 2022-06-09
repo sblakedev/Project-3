@@ -43,6 +43,7 @@ def hangman():
         
         # what current word is (ie w - r d)
         word_list = [letter if letter in used_letters else '-' for letter in secret_word]
+        
         print('Current word: ', ' '.join(word_list))
         
         user_letter = input('Guess a letter: ').lower()
