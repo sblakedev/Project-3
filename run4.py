@@ -46,34 +46,44 @@ def play_game():
         print("Your name can only use letters. Please try again.")
         return name
     
-    # Print dashes instead of letters for secret word
-    for letter in word:
-        secret_word = "_"*len(letter)
-        print("Your word is", secret_word)
+    
+    while lives > 0:
+        # Print dashes instead of letters for secret word
+        for letter in word:
+            secret_word = "_"*len(letter)
+            print("Your word is", secret_word)
+
+        # Ask user for guess
+        guess = input("Please guess a letter:\n").lower()
+                
+        word_list = [letter if letter in used_letters else "-" for letter in word]
+        print(" ".join(word_list))
         
-        if letter in used_letters:
-            print(secret_word)
-    word_list = [letter if letter in used_letters else '-' for letter in word]
-    print('Current word: ', ' '.join(word_list))
-    
-    # Ask user for guess    
-    guess = input("Please guess a letter:\n").lower()
-    
-    if guess in word:
-        used_letters.add(guess)
-        print("Correct!", guess, "is in the word!")
-        score += 1
-        print("Your score is:", score)
-    else:
-        used_letters.add(guess)
-        print("Sorry!", guess, "is not in the word.")
-        print("You lose a life.")
-        lives -= 1
-        print("Your score is:", score)
-    
-    print(used_letters)
+        if guess in alphabet - used_letters:
+            used_letters.add(guess)
+            if guess in word_letters:
+                word_letters.remove(guess)
+                print('')
+                print("Correct!", guess, "is in the word!")
+                score += 1
+                print("Your score is:", score)
+                print(used_letters)
         
-        
-    
-    
+        #if guess in word_letters:
+        #    used_letters.add(guess)
+        #    print("Correct!", guess, "is in the word!")
+        #    score += 1
+        #    print("Your score is:", score)
+        #    print(secret_word)
+        #    print(used_letters)
+            else:
+                used_letters.add(guess)
+                print("Sorry!", guess, "is not in the word.")
+                print("You lose a life.")
+                lives -= 1
+                print("Your score is:", score)
+                print(secret_word)
+                print(used_letters)
+
+   
 play_game()
