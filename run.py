@@ -19,6 +19,8 @@ list_of_words = SHEET.worksheet("words").get_all_values()
 list_word = random.choice(list_of_words)
 secret_word = " ".join(list_word)
 used_letters = set()  # user's guessed letters
+score = 0
+lives = 7
     
 # test
 print(secret_word)
