@@ -15,3 +15,14 @@ CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('hangman')
+
+def get_word():
+    list_of_words = SHEET.worksheet("words").get_all_values()
+    list_word = random.choice(list_of_words)
+    secret_word = " ".join(list_word)
+    
+    # test
+    print(secret_word)
+
+
+get_word()
