@@ -25,4 +25,10 @@ def get_word():
     print(secret_word)
 
 
+def hangman():
+    get_word()
+    guess = input("Please guess a letter:\n").lower()
+    
+    if guess in secret_word:
+
 get_word()
