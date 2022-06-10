@@ -19,6 +19,8 @@ list_of_words = SHEET.worksheet("words").get_all_values()
 list_word = random.choice(list_of_words)
 secret_word = " ".join(list_word)
 used_letters = set()  # user's guessed letters
+word_letters = set(secret_word)  # letters in the word
+alphabet = set(string.ascii_uppercase)
 score = 0
 lives = 7
     
@@ -35,7 +37,9 @@ def hangman():
     used_letters.add(guess)
     
     # Code from Kylie Ying YouTube tutorial
-    while lives > 0:
+    while lives > 0 and len(word_letters) > 0:
+        print("You have", lives, "lives left.")
+        print("You have used these letters: ", " ".join(used_letters))
         word_list = [
             letter if letter in used_letters else "_" for letter in
             secret_word]
