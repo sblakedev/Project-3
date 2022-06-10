@@ -17,8 +17,8 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('hangman')
 
 list_of_words = SHEET.worksheet('words').get_all_values()
-word = random.choice(list_of_words)
-word_letters = set(word) # letters in the word
+listed_word = random.choice(list_of_words)
+word = set(listed_word) # letters in the word
 alphabet = set(string.ascii_uppercase)
 
 used_letters = set() # letters that have been guessed
@@ -49,21 +49,28 @@ def play_game():
     
     while lives > 0:
         # Print dashes instead of letters for secret word
-        for letter in word:
-            secret_word = "_"*len(letter)
+        for word in listed_word:
+            secret_word = "_"*len(word)
             print("Your word is", secret_word)
 
-        # Ask user for guess
-        guess = input("Please guess a letter:\n").lower()
-                
-        word_list = [letter if letter in used_letters else "-" for letter in word]
-        print(" ".join(word_list))
+            # Ask user for guess
+            guess = input("Please guess a letter:\n").lower()
+                    
+            word = [letter if letter in used_letters else "-" for letter in listed_word]
+            print(" ".join(word))
         
-        if guess in alphabet - used_letters:
-            used_letters.add(guess)
-            if guess in word_letters:
-                word_letters.remove(guess)
-                print('')
+        # if guess in alphabet - used_letters:
+        #    used_letters.add(guess)
+        #    if guess in word_letters:
+        #        word_letters.remove(guess)
+        #        print('')
+        #        print("Correct!", guess, "is in the word!")
+        #        score += 1
+        #        print("Your score is:", score)
+        #        print(used_letters)
+                
+        for i in word:
+            if i == guess:
                 print("Correct!", guess, "is in the word!")
                 score += 1
                 print("Your score is:", score)

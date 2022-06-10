@@ -18,24 +18,22 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('hangman')
 
 
-def get_valid_word(words):
-    list_of_words = SHEET.worksheet('words').get_all_values()
-    secret_word = random.choice(list_of_words)  # randomly chooses something from the list
-    while '-' in secret_word or ' ' in secret_word:
-        secret_word = random.choice(list_of_words)
+def get_valid_word(list_of_words):
+    word = random.choice(list_of_words)  # randomly chooses something from the list
+    while '-' in word or ' ' in word:
+        word = random.choice(list_of_words)
 
-    return secret_word()
+    return word.upper()
 
 def hangman():
-    list_of_words = SHEET.worksheet('words').get_all_values()
-    secret_word = random.choice(list_of_words)
-    secret_letters = set(secret_word) # letters in the word
+    word = get_valid_word(list_of_words)
+    word_letters = set(word) # letters in the word
     alphabet = set(string.ascii_lowercase)
     used_letters = set() # what the user has guessed
     lives = 7
     
     # getting user input
-    while len(secret_letters) > 0 and lives > 0:
+    while len(word_letters) > 0 and lives > 0:
         # letters used
         # ' '.join(['a', 'b', 'cd']) --> 'a b cd'
         print('You have', lives, 'lives left')
@@ -49,7 +47,7 @@ def hangman():
         user_letter = input('Guess a letter: ').lower()
         if user_letter in alphabet - used_letters:
             used_letters.add(user_letter)
-            if user_letter in secret_letters:
+            if user_letter in word_letters:
                 secret_letters.remove(user_letter)
                 print('')
                 

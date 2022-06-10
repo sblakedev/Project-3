@@ -35,7 +35,11 @@ def welcome():
         print("Your name can only use letters. Please try again.")
         return name
   
-
+def get_word():
+    list_of_words = SHEET.worksheet('words').get_all_values()
+    secret_word = random.choice(list_of_words)
+    print(secret_word)  # test
+    
 def play_game():
     """
     Retrieves a random word from the list of words document.
@@ -43,9 +47,6 @@ def play_game():
     If guess is correct, increase score by 1.
     If guess is incorrect, decrease lives by 1.
     """
-    list_of_words = SHEET.worksheet('words').get_all_values()
-    secret_word = random.choice(list_of_words)
-    print(secret_word)  # test
     lives = 7
     wrong_guesses = 0
     guessed = 0
