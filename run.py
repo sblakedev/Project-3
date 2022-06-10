@@ -34,10 +34,16 @@ def hangman():
     guess = input("Please guess a letter:\n").lower()
     used_letters.add(guess)
     
-    if guess in secret_word:
-        print("Correct!", guess, "is in the word!\n")
-    else:
-        print("Sorry!", guess, "is not in the word.")
-        print("You lose a life.")
+    # Code from Kylie Ying YouTube tutorial
+    while lives > 0:
+        word_list = [
+            letter if letter in used_letters else "_" for letter in
+            secret_word]
+        print("Your word is: ", " ".join(word_list))
+        if guess in secret_word:
+            print("Correct!", guess, "is in the word!\n")
+        else:
+            print("Sorry!", guess, "is not in the word.")
+            print("You lose a life.")
 
 hangman()
