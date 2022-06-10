@@ -15,20 +15,13 @@ CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('hangman')
-
+list_of_words = SHEET.worksheet("words").get_all_values()
+list_word = random.choice(list_of_words)
+secret_word = " ".join(list_word)
 used_letters = set()  # user's guessed letters
-
-def get_word():
-    """
-    Gets a random word from the list of words in the google doc
-    Converts the word to a string
-    """
-    list_of_words = SHEET.worksheet("words").get_all_values()
-    list_word = random.choice(list_of_words)
-    secret_word = " ".join(list_word)
     
-    # test
-    print(secret_word)
+# test
+print(secret_word)
 
 
 def hangman():
@@ -36,10 +29,13 @@ def hangman():
     Gets user input for guessing a letter
     Checks if the letter is in the word
     """
-    get_word()
     guess = input("Please guess a letter:\n").lower()
+    used_letters.add(guess)
     
     if guess in secret_word:
-        used_letters.add(guess)
+        print("Correct!", guess, "is in the word!\n")
+    else:
+        print("Sorry!", guess, "is not in the word.")
+        print("You lose a life.")
 
-get_word()
+hangman()
