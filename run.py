@@ -22,9 +22,6 @@ secret_word = " ".join(list_word)
 used_letters = set()  # user's guessed letters
 word_letters = set(secret_word)  # letters in the word
 alphabet = set(string.ascii_lowercase)
-    
-# test
-print(secret_word)
 
 
 def hangman():
@@ -47,12 +44,12 @@ def hangman():
     else:
         print("Your name can only use letters. Please try again.\n")
         return name
-    
+
     sleep(2)
-    
+
     os.system('cls')
     os.system('clear')
-    
+
     # Code from Kylie Ying YouTube tutorial
     while len(word_letters) > 0 and lives > 0:
         print("Your score is:", score)
@@ -63,12 +60,12 @@ def hangman():
             secret_word]
         print("Your word is: ", " ".join(word_list), "\n")
         guess = input("Please guess a letter:\n").lower()
-        
+
         sleep(1)
-    
+
         os.system('cls')
         os.system('clear')
-        
+
         if guess in alphabet - used_letters:
             used_letters.add(guess)
             if guess in word_letters:
@@ -79,16 +76,16 @@ def hangman():
                 print("Sorry!", guess, "is not in the word.\n")
                 print("You lose a life.\n")
                 lives = lives - 1
-            
+
         elif guess in used_letters:
             print("You have already guessed that letter. Please try again.\n")
-            
+
         else:
             print("Invalid character. Please enter a letter.\n")
 
 
     if lives == 0:
-        
+
         print("You have lost all of your lives.\n")
         print("The word was", secret_word)
     else:

@@ -62,10 +62,8 @@ This is a Hangman game created in Python. It runs in the Code Institute mock ter
     * Install new version of pip (pip-22.1.2) - python -m pip install --upgrade pip
     * Install gspread.
 
-* After entering username and getting user validation, program asks for username again
-    * Put a break in to if statement in while loop.
-
 * TypeError: object of type 'Worksheet' has no len()
+  * Convert random word from list_of_words to string by defining a new empty variable as " ".join(list_word), using .join which takes all items and joins them into a string.
 
 
 ---
@@ -86,6 +84,7 @@ In the future, features to include are:
 #### Code
   * Python guidance and some code from The Python Workshop for Beginners Part 2 Udemy video by [XXX](https://www.udemy.com/course/the-python-workshop-for-beginners-part-2/learn/lecture/21928888#overview)
   * Some Python code came from Kylie Ying https://www.youtube.com/watch?v=cJJTnI22IF8&t=615s
+  * Clear terminal code came from [Scaler] (https://www.scaler.com/topics/how-to-clear-screen-in-python/)
   * Boilerplate code came from [Code Institute](https://github.com/Code-Institute-Org/gitpod-full-template/tree/main/.vscode)
   * Most issues in the code were resolved by searching through [Stack Overflow](https://stackoverflow.com/)
 
@@ -96,4 +95,4 @@ In the future, features to include are:
   * Inspiration for ReadMe came from the Code Institute Sample ReadMe, Code Institue ReadMe template, my own Project 1 ReadMe and suggestions from my Project 1 assesor.
   * My mentor Martina Terlevic for fantastic guidance.
   * Slack community.
-  * Code Institute Tutors - James, Sean and Oisin.
+  * 
