@@ -68,7 +68,7 @@ def hangman():
                 word_letters.remove(guess)
                 score = score + 1
             else:
-                print("Sorry!", guess, "is not in the word.")
+                print("Sorry!", guess, "is not in the word.\n")
                 print("You lose a life.")
                 lives = lives - 1
             
@@ -77,5 +77,11 @@ def hangman():
             
         else:
             print('Invalid character. Please enter a letter.')
+            
+    if lives == 0:
+        print("You have lost all of your lives.")
+        print("The word was", secret_word)
+    else:
+        print("Congratulations! You guessed the word", secret_word, "!")
 
 hangman()
