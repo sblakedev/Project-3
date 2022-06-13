@@ -51,7 +51,8 @@ def hangman():
     global score
     
     # Code from Kylie Ying YouTube tutorial
-    while len(word_letters) > 0:
+    while len(word_letters) > 0 and lives > 0:
+        print("Your score is:", score)
         print("You have", lives, "lives left.")
         print("You have used these letters: ", " ".join(used_letters))
         word_list = [
@@ -65,14 +66,14 @@ def hangman():
             if guess in word_letters:
                 print("Correct!", guess, "is in the word!\n")
                 word_letters.remove(guess)
-                score += 1
+                score = score + 1
             else:
                 print("Sorry!", guess, "is not in the word.")
                 print("You lose a life.")
                 lives = lives - 1
             
         elif guess in used_letters:
-            print('You have already guessed that letter. Please try another letter.')
+            print('You have already guessed that letter. Please try again.')
             
         else:
             print('Invalid character. Please enter a letter.')
