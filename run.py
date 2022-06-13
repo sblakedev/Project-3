@@ -20,7 +20,7 @@ list_word = random.choice(list_of_words)
 secret_word = " ".join(list_word)
 used_letters = set()  # user's guessed letters
 word_letters = set(secret_word)  # letters in the word
-alphabet = set(string.ascii_uppercase)
+alphabet = set(string.ascii_lowercase)
 score = 0
 lives = 7
     
@@ -47,27 +47,29 @@ def hangman():
         print("Your name can only use letters. Please try again.")
         return name
     
-    guess = input("Please guess a letter:\n").lower()
-    used_letters.add(guess)
+    global lives
+    global score
     
     # Code from Kylie Ying YouTube tutorial
-    while lives > 0 and len(word_letters) > 0:
+    while len(word_letters) > 0:
         print("You have", lives, "lives left.")
         print("You have used these letters: ", " ".join(used_letters))
         word_list = [
             letter if letter in used_letters else "_" for letter in
             secret_word]
         print("Your word is: ", " ".join(word_list))
+        guess = input("Please guess a letter:\n").lower()
+        
         if guess in alphabet - used_letters:
             used_letters.add(guess)
-            if guess in secret_word:
+            if guess in word_letters:
                 print("Correct!", guess, "is in the word!\n")
                 word_letters.remove(guess)
                 score += 1
             else:
                 print("Sorry!", guess, "is not in the word.")
                 print("You lose a life.")
-                lives -= 1
+                lives = lives - 1
             
         elif guess in used_letters:
             print('You have already guessed that letter. Please try another letter.')
