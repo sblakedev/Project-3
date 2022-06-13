@@ -30,9 +30,23 @@ print(secret_word)
 
 def hangman():
     """
+    Welcomes user and asks for user name
     Gets user input for guessing a letter
     Checks if the letter is in the word
     """
+    print("Welcome to Hangman!")
+    print("To play, guess the letters in a random 5 letter word.")
+    print("You will have 7 lives.")
+    print("If your letter is correct, your points will increase by one.")
+    print("If your letter is incorrect, you will lose a life.")
+
+    name = input("Please enter your name:\n")
+    if name.isalpha():
+        print(f"Hello {name}. Let's play Hangman!")
+    else:
+        print("Your name can only use letters. Please try again.")
+        return name
+    
     guess = input("Please guess a letter:\n").lower()
     used_letters.add(guess)
     
