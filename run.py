@@ -45,6 +45,7 @@ def hangman():
         print("Your name can only use letters. Please try again.\n")
         return name
 
+    # Clear terminal code from Scaler
     sleep(2)
 
     os.system('cls')
@@ -72,6 +73,7 @@ def hangman():
                 print("Correct!", guess, "is in the word!\n")
                 word_letters.remove(guess)
                 score = score + 1
+            
             else:
                 print("Sorry!", guess, "is not in the word.\n")
                 print("You lose a life.\n")
@@ -90,5 +92,8 @@ def hangman():
         print("The word was", secret_word)
     else:
         print("Congratulations! You guessed the word", secret_word, "!")
+
+def quit_game()
+
 
 hangman()
