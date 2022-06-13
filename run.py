@@ -38,8 +38,8 @@ def hangman():
     print("Welcome to Hangman!\n")
     print("To play, guess the letters in a random 5 letter word.\n")
     print("You will have 7 lives.")
-    print("If your letter is correct, your points will increase by one.")
-    print("If your letter is incorrect, you will lose a life.")
+    print("If your letter is correct, your score will increase by one.")
+    print("If your letter is incorrect, you will lose a life.\n")
 
     name = input("Please enter your name:\n")
     if name.isalpha():
@@ -48,7 +48,7 @@ def hangman():
         print("Your name can only use letters. Please try again.\n")
         return name
     
-    sleep(1)
+    sleep(2)
     
     os.system('cls')
     os.system('clear')
