@@ -21,8 +21,6 @@ secret_word = " ".join(list_word)
 used_letters = set()  # user's guessed letters
 word_letters = set(secret_word)  # letters in the word
 alphabet = set(string.ascii_lowercase)
-score = 0
-lives = 7
     
 # test
 print(secret_word)
@@ -34,6 +32,8 @@ def hangman():
     Gets user input for guessing a letter
     Checks if the letter is in the word
     """
+    lives = 7
+    score = 0
     print("Welcome to Hangman!")
     print("To play, guess the letters in a random 5 letter word.")
     print("You will have 7 lives.")
@@ -47,9 +47,7 @@ def hangman():
         print("Your name can only use letters. Please try again.")
         return name
     
-    global lives
-    global score
-    
+
     # Code from Kylie Ying YouTube tutorial
     while len(word_letters) > 0 and lives > 0:
         print("Your score is:", score)
