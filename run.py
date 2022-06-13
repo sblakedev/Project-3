@@ -58,10 +58,21 @@ def hangman():
             letter if letter in used_letters else "_" for letter in
             secret_word]
         print("Your word is: ", " ".join(word_list))
-        if guess in secret_word:
-            print("Correct!", guess, "is in the word!\n")
+        if guess in alphabet - used_letters:
+            used_letters.add(guess)
+            if guess in secret_word:
+                print("Correct!", guess, "is in the word!\n")
+                word_letters.remove(guess)
+                score += 1
+            else:
+                print("Sorry!", guess, "is not in the word.")
+                print("You lose a life.")
+                lives -= 1
+            
+        elif guess in used_letters:
+            print('You have already guessed that letter. Please try another letter.')
+            
         else:
-            print("Sorry!", guess, "is not in the word.")
-            print("You lose a life.")
+            print('Invalid character. Please enter a letter.')
 
 hangman()
