@@ -41,6 +41,8 @@ def hangman():
     name = input("Please enter your name:\n")
     if name.isalpha():
         print(f"Hello {name}. Let's play Hangman!\n")
+    elif guess == "quit":
+        
     else:
         print("Your name can only use letters. Please try again.\n")
         return name
@@ -74,6 +76,8 @@ def hangman():
                 word_letters.remove(guess)
                 score = score + 1
             
+            elif guess == "quit"
+
             else:
                 print("Sorry!", guess, "is not in the word.\n")
                 print("You lose a life.\n")
@@ -92,8 +96,6 @@ def hangman():
         print("The word was", secret_word)
     else:
         print("Congratulations! You guessed the word", secret_word, "!")
-
-def quit_game()
 
 
 hangman()
