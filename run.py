@@ -2,8 +2,9 @@
 import gspread
 from google.oauth2.service_account import Credentials
 import random
-from IPython.display import clear_output
+import os
 import string
+from time import sleep
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -34,30 +35,39 @@ def hangman():
     """
     lives = 7
     score = 0
-    print("Welcome to Hangman!")
-    print("To play, guess the letters in a random 5 letter word.")
+    print("Welcome to Hangman!\n")
+    print("To play, guess the letters in a random 5 letter word.\n")
     print("You will have 7 lives.")
     print("If your letter is correct, your points will increase by one.")
     print("If your letter is incorrect, you will lose a life.")
 
     name = input("Please enter your name:\n")
     if name.isalpha():
-        print(f"Hello {name}. Let's play Hangman!")
+        print(f"Hello {name}. Let's play Hangman!\n")
     else:
-        print("Your name can only use letters. Please try again.")
+        print("Your name can only use letters. Please try again.\n")
         return name
     
-
+    sleep(1)
+    
+    os.system('cls')
+    os.system('clear')
+    
     # Code from Kylie Ying YouTube tutorial
     while len(word_letters) > 0 and lives > 0:
         print("Your score is:", score)
-        print("You have", lives, "lives left.")
-        print("You have used these letters: ", " ".join(used_letters))
+        print("You have", lives, "lives left.\n")
+        print("You have used these letters: ", " ".join(used_letters), "\n")
         word_list = [
             letter if letter in used_letters else "_" for letter in
             secret_word]
-        print("Your word is: ", " ".join(word_list))
+        print("Your word is: ", " ".join(word_list), "\n")
         guess = input("Please guess a letter:\n").lower()
+        
+        sleep(1)
+    
+        os.system('cls')
+        os.system('clear')
         
         if guess in alphabet - used_letters:
             used_letters.add(guess)
@@ -67,17 +77,19 @@ def hangman():
                 score = score + 1
             else:
                 print("Sorry!", guess, "is not in the word.\n")
-                print("You lose a life.")
+                print("You lose a life.\n")
                 lives = lives - 1
             
         elif guess in used_letters:
-            print('You have already guessed that letter. Please try again.')
+            print("You have already guessed that letter. Please try again.\n")
             
         else:
-            print('Invalid character. Please enter a letter.')
-            
+            print("Invalid character. Please enter a letter.\n")
+
+
     if lives == 0:
-        print("You have lost all of your lives.")
+        
+        print("You have lost all of your lives.\n")
         print("The word was", secret_word)
     else:
         print("Congratulations! You guessed the word", secret_word, "!")
