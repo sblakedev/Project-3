@@ -27,7 +27,7 @@ def get_word():
     secret_word = " ".join(list_word)
     return secret_word
 
-    
+
 def welcome():
     """
     Welcomes user and explains the rules
@@ -37,6 +37,32 @@ def welcome():
     print("You will have 7 lives.")
     print("If your letter is correct, your score will increase by one.")
     print("If your letter is incorrect, you will lose a life.\n")
+    
+    play = input("Would you like to play hangman?\n[y]es / [n]o\n")
+    if play == "y":
+        sleep(1)
+
+        os.system('cls')
+        os.system('clear')
+
+        get_word()
+        hangman()
+
+    elif play == "n":
+        sleep(1)
+
+        os.system('cls')
+        os.system('clear')
+            
+        print("Ok")
+            
+        sleep(1)
+
+        os.system('cls')
+        os.system('clear')
+            
+    else:
+        print("Invalid character. Please enter y or n.\n")
 
 
 def get_name():
@@ -118,7 +144,7 @@ def play_again(name):
     Asks user if they want to play again or not
     """
     while True:
-        replay = input(f"Would you like to play again {name}? [y]es / [n]o \n")
+        replay = input(f"Would you like to play again {name}?\n[y]es / [n]o\n")
         if replay == "y":
             sleep(1)
 
@@ -135,6 +161,11 @@ def play_again(name):
             os.system('clear')
             
             print("Thank you for playing", name)
+            
+            sleep(1)
+
+            os.system('cls')
+            os.system('clear')
             
         else:
             print("Invalid character. Please enter y or n.\n")
