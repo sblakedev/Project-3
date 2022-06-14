@@ -39,14 +39,18 @@ def welcome():
     print("If your letter is incorrect, you will lose a life.\n")
     
     play = input("If you'd like to play, please press y\n")
-    if play == "y":
-        get_name()
-        get_word()
-        hangman()
-    elif play == "n":
-        print("Ok")
-    else:
-        print("Invalid character. Please enter y if you'd like to play.\n")
+    while True:
+        if play == "y":
+            main()
+        else:
+            print("Invalid character. Please enter y if you'd like to play.\n")
+            sleep(2)
+
+            os.system('cls')
+            os.system('clear')
+            
+            break
+    welcome()
 
 
 def get_name():
@@ -72,7 +76,6 @@ def get_name():
 
 def hangman():
     """
-    Welcomes user and asks for user name
     Gets user input for guessing a letter
     Checks if the letter is in the word
     """
@@ -160,10 +163,10 @@ def main():
     Runs all functions
     """
     get_word()
-    welcome()
     name = get_name()
     hangman()
     play_again(name)
 
 
+welcome()
 main()
