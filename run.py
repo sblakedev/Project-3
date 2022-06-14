@@ -40,9 +40,9 @@ def hangman():
 
     name = input("Please enter your name:\n")
     if name.isalpha():
-        print(f"Hello {name}. Let's play Hangman!\n")
-    elif guess == "quit":
-        
+        print("Hello ", name, ". Let's play Hangman!\n")
+    elif name == "quit":
+        print("Thank you for playing", name)
     else:
         print("Your name can only use letters. Please try again.\n")
         return name
@@ -76,7 +76,10 @@ def hangman():
                 word_letters.remove(guess)
                 score = score + 1
             
-            elif guess == "quit"
+            elif guess == "quit":
+                print("Thank you for playing", name)
+                print("The word was", secret_word)
+                print("Your score is:", score)
 
             else:
                 print("Sorry!", guess, "is not in the word.\n")
@@ -91,7 +94,6 @@ def hangman():
 
 
     if lives == 0:
-
         print("You have lost all of your lives.\n")
         print("The word was", secret_word)
     else:
