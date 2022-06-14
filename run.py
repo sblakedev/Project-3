@@ -16,22 +16,21 @@ CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('hangman')
-list_of_words = SHEET.worksheet("words").get_all_values()
-list_word = random.choice(list_of_words)
-secret_word = " ".join(list_word)
-used_letters = set()  # user's guessed letters
-word_letters = set(secret_word)  # letters in the word
-alphabet = set(string.ascii_lowercase)
 
 
-def hangman():
+def get_word():
+    list_of_words = SHEET.worksheet("words").get_all_values()
+    list_word = random.choice(list_of_words)
+    secret_word = " ".join(list_word)
+    return secret_word
+
+    
+def welcome():
     """
     Welcomes user and asks for user name
     Gets user input for guessing a letter
     Checks if the letter is in the word
     """
-    lives = 7
-    score = 0
     print("Welcome to Hangman!\n")
     print("To play, guess the letters in a random 5 letter word.\n")
     print("You will have 7 lives.")
@@ -52,6 +51,20 @@ def hangman():
     os.system('cls')
     os.system('clear')
 
+    return name
+
+
+def hangman(secret_word, name):
+    """
+    Welcomes user and asks for user name
+    Gets user input for guessing a letter
+    Checks if the letter is in the word
+    """
+    used_letters = set()  # user's guessed letters
+    word_letters = set(secret_word)  # letters in the word
+    alphabet = set(string.ascii_lowercase)
+    lives = 7
+    score = 0
     # Code from Kylie Ying YouTube tutorial
     while len(word_letters) > 0 and lives > 0:
         print("Your score is:", score)
@@ -75,11 +88,6 @@ def hangman():
                 word_letters.remove(guess)
                 score = score + 1
 
-            elif guess == "quit":
-                print("Thank you for playing", name)
-                print("The word was", secret_word)
-                print("Your score is:", score)
-
             else:
                 print("Sorry!", guess, "is not in the word.\n")
                 print("You lose a life.\n")
@@ -94,8 +102,47 @@ def hangman():
     if lives == 0:
         print("You have lost all of your lives.\n")
         print("The word was", secret_word, "\n")
+        play_again(name)
     else:
         print("Congratulations! You guessed the word", secret_word, "!")
 
 
-hangman()
+def play_again(name):
+    """
+    Asks user if they want to play again or not
+    """
+    while True:
+        replay = input(f"Would you like to play again {name}? [y]es / [n]o \n")
+        if replay == "y":
+            sleep(1)
+
+            os.system('cls')
+            os.system('clear')
+            
+            get_word()
+            hangman(secret_word, name)
+            
+        elif replay == "n":
+            sleep(1)
+
+            os.system('cls')
+            os.system('clear')
+            
+            print("Thank you for playing", name)
+            
+        else:
+            print("Invalid character. Please enter y or n.\n")
+
+
+def main():
+    """
+    Runs all functions
+    """
+    get_word()
+    welcome()
+    name = welcome()
+    secret_word = get_word()
+    hangman(secret_word, name)
+
+
+main()
