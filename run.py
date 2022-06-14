@@ -38,31 +38,15 @@ def welcome():
     print("If your letter is correct, your score will increase by one.")
     print("If your letter is incorrect, you will lose a life.\n")
     
-    play = input("Would you like to play hangman?\n[y]es / [n]o\n")
+    play = input("If you'd like to play, please press y\n")
     if play == "y":
-        sleep(1)
-
-        os.system('cls')
-        os.system('clear')
-
+        get_name()
         get_word()
         hangman()
-
     elif play == "n":
-        sleep(1)
-
-        os.system('cls')
-        os.system('clear')
-            
         print("Ok")
-            
-        sleep(1)
-
-        os.system('cls')
-        os.system('clear')
-            
     else:
-        print("Invalid character. Please enter y or n.\n")
+        print("Invalid character. Please enter y if you'd like to play.\n")
 
 
 def get_name():
