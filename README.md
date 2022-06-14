@@ -1,6 +1,6 @@
 ## Hangman Game
 
-This is a Hangman game created in Python. It runs in the Code Institute mock terminal on Heroku. 
+This is a Hangman game created in Python. It runs in the Code Institute mock terminal on Heroku. To play, the user must guess a letter from a 5 letter word. If the letter is in the word, the user's score goes up by one. If the letter is not in the word, the user loses one of seven lives. When the user has guessed all of the letters correctly, they win the game. If they don't guess the letters and their lives run out, they lose the game.
 
 ---
 
