@@ -30,30 +30,41 @@ This is a Hangman game created in Python. It runs in the Code Institute mock ter
 ### Features
 * Welcome Screen
 ![Welcome Screen](assets/images/readme/Welcome_Page.PNG)
+  On the welcome screen, the user can see the rules of the game. They are then asked to enter "y" if they want to play.
+
 
 * Input Name
   * Correct Input
   ![Correct Input](assets/images/readme/Name_Input.PNG)
+  On the welcome screen, the user is promted to enter their name.
   * Invalid Input
   ![Invalid Input](assets/images/readme/Name_Invalid_Character.PNG)
+  If the user tries to enter anything other than letters, they get a message saying that they can only use letters. They can then try again.
 
 * Guess Screen
   * First Guess
   ![First Guess](assets/images/readme/Guess_Letter_Blank.PNG)
+    For their first guess, the user is shown their word with dashes in place of the letters. Their score is 0 and their lives are at 7. They are prompted to input a letter.
   * Correct Guess
   ![Correct Guess](assets/images/readme/Guess_Letter_Right.PNG)
+    When the user guesses a letter correctly, they get a message saying that their guess is correct. Their score increases by 1 and their lives are not affected. They can see what letters they have already guessed.
   * Incorrect Guess
   ![Incorrect Guess](assets/images/readme/Guess_Letter_Wrong.PNG)
+    When the user guesses a letter incorrectly, they get a message saying that their guess is not in the word. Their score is not affected but their lives decrease by one. They can see what letters they have already guessed.
   * Invalid Guess
   ![Invalid Guess](assets/images/readme/Guess_Invalid_Character.PNG)
+    If the user tries to input numbers, whitespaces or more than one letter, they will get a message saying that they have used an invalid character. Score and lives are not affected.
   * Already Guessed
   ![Already Guessed](assets/images/readme/Guess_Already.PNG)
+    If the user tries to guess a letter that they have already guessed, they will get a message saying that they already guessed that letter. Score and lives are not affected.
 
 * Word is Right
 ![Correct Word](assets/images/readme/Word_Right.PNG)
+  If the user guessed all of the letters correctly, they get a message telling them that they guessed the word, and are shown the word. They are then asked if they want to play again. If they type "y", they are brought back to guess again for the first time, with score and lives reset, and are given a new word. If they type "n", they are brought back to the welcome screen.
 
 * Word is Wrong
 ![Wrong Word](assets/images/readme/Word_Wrong.PNG)
+  If the user ran out of lives, they get a message to say they have lost all of their lives, and are shown the word they were trying to guess. They are then asked if they want to play again. If they type "y", they are brought back to guess again for the first time, with score and lives reset, and are given a new word. If they type "n", they are brought back to the welcome screen.
 
 
 ---
