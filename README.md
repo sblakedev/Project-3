@@ -37,11 +37,14 @@ This is a Hangman game created in Python. It runs in the Code Institute mock ter
 * Python
 
 #### Frameworks, Libraries & Progrmas Used
-1. 
-2. 
-3. 
-4. GitHub - This was used to store the projects code after being pushed from Git.
-5. Git - This was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+1. gspread - This was used to open and read the information in the hangman google spreadsheet.
+2. random - This was used to randomise the list of words that were retrieved from the spreadsheet.
+3. os - This was used to set the os for clearing the output.
+4. string - This was used to create a set containing the lower case alphabet.
+5. sleep from time - This was used to add a time delay before clearing the output.
+6. GitHub - This was used to store the projects code after being pushed from Git.
+7. Git - This was used for version control by utilizing the Gitpod terminal to commit to Git.
+8. Heroku - This was used to deploy the live version
 
 ---
 
