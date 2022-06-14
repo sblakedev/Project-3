@@ -19,6 +19,9 @@ SHEET = GSPREAD_CLIENT.open('hangman')
 
 
 def get_word():
+    """
+    Gets a random word from the google doc
+    """
     list_of_words = SHEET.worksheet("words").get_all_values()
     list_word = random.choice(list_of_words)
     secret_word = " ".join(list_word)
@@ -27,9 +30,7 @@ def get_word():
     
 def welcome():
     """
-    Welcomes user and asks for user name
-    Gets user input for guessing a letter
-    Checks if the letter is in the word
+    Welcomes user and explains the rules
     """
     print("Welcome to Hangman!\n")
     print("To play, guess the letters in a random 5 letter word.\n")
@@ -37,6 +38,11 @@ def welcome():
     print("If your letter is correct, your score will increase by one.")
     print("If your letter is incorrect, you will lose a life.\n")
 
+
+def get_name():
+    """
+    Gets the user to input their name
+    """
     while True:
         name = input("Please enter your name:\n")
         if name.isalpha():
@@ -54,12 +60,13 @@ def welcome():
     return name
 
 
-def hangman(secret_word, name):
+def hangman():
     """
     Welcomes user and asks for user name
     Gets user input for guessing a letter
     Checks if the letter is in the word
     """
+    secret_word = get_word()
     used_letters = set()  # user's guessed letters
     word_letters = set(secret_word)  # letters in the word
     alphabet = set(string.ascii_lowercase)
@@ -102,7 +109,6 @@ def hangman(secret_word, name):
     if lives == 0:
         print("You have lost all of your lives.\n")
         print("The word was", secret_word, "\n")
-        play_again(name)
     else:
         print("Congratulations! You guessed the word", secret_word, "!")
 
@@ -118,10 +124,10 @@ def play_again(name):
 
             os.system('cls')
             os.system('clear')
-            
+
             get_word()
-            hangman(secret_word, name)
-            
+            hangman()
+
         elif replay == "n":
             sleep(1)
 
@@ -140,9 +146,9 @@ def main():
     """
     get_word()
     welcome()
-    name = welcome()
-    secret_word = get_word()
-    hangman(secret_word, name)
+    name = get_name()
+    hangman()
+    play_again(name)
 
 
 main()
