@@ -1,4 +1,5 @@
 # import additional functions
+
 import gspread
 from google.oauth2.service_account import Credentials
 import random
@@ -37,7 +38,7 @@ def welcome():
     print("You will have 7 lives.")
     print("If your letter is correct, your score will increase by one.")
     print("If your letter is incorrect, you will lose a life.\n")
-    
+
     play = input("If you'd like to play, please press y\n")
     while True:
         if play == "y":
@@ -48,7 +49,7 @@ def welcome():
 
             os.system('cls')
             os.system('clear')
-            
+
             break
     welcome()
 
@@ -146,16 +147,16 @@ def play_again(name):
 
             os.system('cls')
             os.system('clear')
-            
+
             print("Thank you for playing", name)
-            
+
             sleep(1)
 
             os.system('cls')
             os.system('clear')
-            
+
             welcome()
-            
+
         else:
             print("Invalid character. Please enter y or n.\n")
 

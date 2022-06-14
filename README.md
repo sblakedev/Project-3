@@ -47,6 +47,7 @@ This is a Hangman game created in Python. It runs in the Code Institute mock ter
 
 ### Testing
 #### Validator Testing
+![PEP8](assets/images/readme/PEP8_Validation.PNG)
 
 
 #### User Stories Testing
