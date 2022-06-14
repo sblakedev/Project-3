@@ -154,6 +154,8 @@ def play_again(name):
             os.system('cls')
             os.system('clear')
             
+            welcome()
+            
         else:
             print("Invalid character. Please enter y or n.\n")
 
