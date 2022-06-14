@@ -38,14 +38,13 @@ def hangman():
     print("If your letter is correct, your score will increase by one.")
     print("If your letter is incorrect, you will lose a life.\n")
 
-    name = input("Please enter your name:\n")
-    if name.isalpha():
-        print("Hello ", name, ". Let's play Hangman!\n")
-    elif name == "quit":
-        print("Thank you for playing", name)
-    else:
-        print("Your name can only use letters. Please try again.\n")
-        return name
+    while True:
+        name = input("Please enter your name:\n")
+        if name.isalpha():
+            print("Hello ", name, ". Let's play Hangman!\n")
+            break
+        else:
+            print("Your name can only use letters. Please try again.\n")
 
     # Clear terminal code from Scaler
     sleep(2)
@@ -91,7 +90,6 @@ def hangman():
 
         else:
             print("Invalid character. Please enter a letter.\n")
-
 
     if lives == 0:
         print("You have lost all of your lives.\n")
