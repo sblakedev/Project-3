@@ -108,6 +108,17 @@ This is a Hangman game created in Python. It runs in the Code Institute mock ter
 
 
 #### Element Testing
+Input Validation
+
+* If you'd like to play, please press y:
+  I tried inputting any other letter, numbers, special characters and whitespace and I got the message "Invalid character. Please enter y if you'd like to play."
+* Please enter your name:
+  I tried inputting any other letter, numbers, special characters and whitespace and I got the message "Your name can only use letters. Please try again."
+* Please guess a letter:
+  I tried inputting any other letter, numbers, special characters and whitespace and I got the message "Invalid character. Please enter a letter."  
+  I also tried inputting a letter I had previously used and got the message "You have already guessed that letter. Please try again."
+* Would you like to play again:
+  I tried inputting any other letter except y and n, numbers, special characters and whitespace and I got the message "Invalid character. Please enter y or n"
 
 
 
