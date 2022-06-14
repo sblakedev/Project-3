@@ -10,7 +10,7 @@ This is a Hangman game created in Python. It runs in the Code Institute mock ter
 ---
 
 ### Responsive MockUp
-
+![Responsive MockUp](assets/images/readme/Responsive_Mockup.PNG)
 
 ---
 
@@ -28,6 +28,32 @@ This is a Hangman game created in Python. It runs in the Code Institute mock ter
 ---
 
 ### Features
+* Welcome Screen
+![Welcome Screen](assets/images/readme/Welcome_Page.PNG)
+
+* Input Name
+  * Correct Input
+  ![Correct Input](assets/images/readme/Name_Input.PNG)
+  * Invalid Input
+  ![Invalid Input](assets/images/readme/Name_Invalid_Character.PNG)
+
+* Guess Screen
+  * First Guess
+  ![First Guess](assets/images/readme/Guess_Letter_Blank.PNG)
+  * Correct Guess
+  ![Correct Guess](assets/images/readme/Guess_Letter_Right.PNG)
+  * Incorrect Guess
+  ![Incorrect Guess](assets/images/readme/Guess_Letter_Wrong.PNG)
+  * Invalid Guess
+  ![Invalid Guess](assets/images/readme/Guess_Invalid_Character.PNG)
+  * Already Guessed
+  ![Already Guessed](assets/images/readme/Guess_Already.PNG)
+
+* Word is Right
+![Correct Word](assets/images/readme/Word_Right.PNG)
+
+* Word is Wrong
+![Wrong Word](assets/images/readme/Word_Wrong.PNG)
 
 
 ---
