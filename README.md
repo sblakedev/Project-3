@@ -17,16 +17,13 @@ This is a Hangman game created in Python. It runs in the Code Institute mock ter
 ### User Experience
 #### User Stories
 * User Goals
-    a. As a User, I want to understand the main purpose of the site.
-    b. As a User, I want to be given an option to play the game or not.
-    c. As a User, I want to understand the rules of the game.
-    d. As a User, I want to be able to guess a letter and know that the game recognises my choice.
-    e. As a User, I want to be able to see how many guesses I have made and see my current score.
-    f. As a User, I want to be able to get my final score when the game is finished.
-    g. As a User, when the game is finished, I want to be able to choose to play again or exit the game.
-    h. As a User, I want to be able to exit the game at any point.
-
-
+    1. As a User, I want to understand the main purpose of the site.
+    2. As a User, I want to be given an option to play the game or not.
+    3. As a User, I want to understand the rules of the game.
+    4. As a User, I want to be able to guess a letter and know that the game recognises my choice.
+    5. As a User, I want to be able to see how many guesses I have made and see my current score.
+    6. As a User, when the game ends, I want to see what the word was.
+    7. As a User, when the game is finished, I want to be able to choose to play again or exit the game.
 
 ---
 
@@ -53,9 +50,25 @@ This is a Hangman game created in Python. It runs in the Code Institute mock ter
 
 
 #### User Stories Testing
+1. As a User, I want to understand the main purpose of the site.
+  * I understand that this site it a Hangman game as the first line of text says "Welcome to Hangman"
+2. As a User, I want to be given an option to play the game or not.
+  * There is the option to enter "y" if I want to play the game. If I type "n" or any other character, I'm brought back to the welcome page.
+3. As a User, I want to understand the rules of the game.
+  * The rules of the game are displayed on the welcome page.
+4. As a User, I want to be able to guess a letter and know that the game recognises my choice.
+  * When I enter a guess, the letter I chose is displayed. If it's right, it appears in a dashed word. If it's not, I get a message to say that the letter is not in the word.
+5. As a User, I want to be able to see how many guesses I have made and see my current score.
+  * At the start, my score and how many lives I have are displayed on screen. After each guess, they are updated and displayed on screen.
+6. As a User, when the game ends, I want to see what the word was.
+  * If I win or lose, the word to be guessed is displayed in full.
+7. As a User, when the game is finished, I want to be able to choose to play again or exit the game.
+  * When I finish the game I'm given the option to play again. If I choose to play again, I get a new word to guess and my score and lives are reset. If I choose not to play again, I'm taken back to the welcome page.
 
 
 #### Element Testing
+
+
 
 #### Bugs
 * ModuleNotFoundError: No module named 'gspread'

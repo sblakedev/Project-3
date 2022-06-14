@@ -123,7 +123,7 @@ def hangman():
         print("You have lost all of your lives.\n")
         print("The word was", secret_word, "\n")
     else:
-        print("Congratulations! You guessed the word", secret_word, "!")
+        print("Congratulations! You guessed the word", secret_word, "!\n")
 
 
 def play_again(name):
