@@ -74,7 +74,7 @@ def hangman():
                 print("Correct!", guess, "is in the word!\n")
                 word_letters.remove(guess)
                 score = score + 1
-            
+
             elif guess == "quit":
                 print("Thank you for playing", name)
                 print("The word was", secret_word)
@@ -93,7 +93,7 @@ def hangman():
 
     if lives == 0:
         print("You have lost all of your lives.\n")
-        print("The word was", secret_word)
+        print("The word was", secret_word, "\n")
     else:
         print("Congratulations! You guessed the word", secret_word, "!")
 
