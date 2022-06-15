@@ -32,7 +32,6 @@ This is a Hangman game created in Python. It runs in the Code Institute mock ter
 ![Welcome Screen](assets/images/readme/Welcome_Page.PNG)
   On the welcome screen, the user can see the rules of the game. They are then asked to enter "y" if they want to play.
 
-
 * Input Name
   * Correct Input
   ![Correct Input](assets/images/readme/Name_Input.PNG)
@@ -66,7 +65,6 @@ This is a Hangman game created in Python. It runs in the Code Institute mock ter
 ![Wrong Word](assets/images/readme/Word_Wrong.PNG)
   If the user ran out of lives, they get a message to say they have lost all of their lives, and are shown the word they were trying to guess. They are then asked if they want to play again. If they type "y", they are brought back to guess again for the first time, with score and lives reset, and are given a new word. If they type "n", they are brought back to the welcome screen.
 
-
 ---
 
 ### Technologies Used
@@ -89,7 +87,6 @@ This is a Hangman game created in Python. It runs in the Code Institute mock ter
 #### Validator Testing
 ![PEP8](assets/images/readme/PEP8_Validation.PNG)
 
-
 #### User Stories Testing
 1. As a User, I want to understand the main purpose of the site.
   * I understand that this site it a Hangman game as the first line of text says "Welcome to Hangman"
@@ -106,7 +103,6 @@ This is a Hangman game created in Python. It runs in the Code Institute mock ter
 7. As a User, when the game is finished, I want to be able to choose to play again or exit the game.
   * When I finish the game I'm given the option to play again. If I choose to play again, I get a new word to guess and my score and lives are reset. If I choose not to play again, I'm taken back to the welcome page.
 
-
 #### Element Testing
 Input Validation
 
@@ -120,8 +116,6 @@ Input Validation
 * Would you like to play again:
   I tried inputting any other letter except y and n, numbers, special characters and whitespace and I got the message "Invalid character. Please enter y or n"
 
-
-
 #### Bugs
 * ModuleNotFoundError: No module named 'gspread'
     * Install new version of pip (pip-22.1.2) - python -m pip install --upgrade pip
@@ -130,12 +124,11 @@ Input Validation
 * TypeError: object of type 'Worksheet' has no len()
   * Convert random word from list_of_words to string by defining a new empty variable as " ".join(list_word), using .join which takes all items and joins them into a string.
 
-
 ---
 
 ### Future Features
 In the future, features to include are:
-  * User will be able to create a username
+  * Add hangman graphics, where a line is drawn for each incorrect guess.
   * Add a high score board
 
 ---
@@ -147,17 +140,16 @@ In the future, features to include are:
 
 ### Credits
 #### Code
-  * Python guidance and some code from The Python Workshop for Beginners Part 2 Udemy video by [XXX](https://www.udemy.com/course/the-python-workshop-for-beginners-part-2/learn/lecture/21928888#overview)
-  * Some Python code came from Kylie Ying https://www.youtube.com/watch?v=cJJTnI22IF8&t=615s
-  * Clear terminal code came from [Scaler] (https://www.scaler.com/topics/how-to-clear-screen-in-python/)
-  * Boilerplate code came from [Code Institute](https://github.com/Code-Institute-Org/gitpod-full-template/tree/main/.vscode)
+  * Python guidance came from The Python Workshop for Beginners Part 2 Udemy video by [The Ultimate Practical to Guide to Python](https://www.udemy.com/course/the-python-workshop-for-beginners-part-2/learn/lecture/21928888#overview)
+  * Some Python code came from [Kylie Ying](https://www.youtube.com/watch?v=cJJTnI22IF8&t=615s)
+  * Clear terminal code came from [Scaler](https://www.scaler.com/topics/how-to-clear-screen-in-python/)
   * Most issues in the code were resolved by searching through [Stack Overflow](https://stackoverflow.com/)
+  * Scope and variable code came from [Code Institute's Love Sandwiches Project](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LS101+2021_T1/courseware/293ee9d8ff3542d3b877137ed81b9a5b/071036790a5642f9a6f004f9888b6a45/)
 
 #### Content
-  * 5 hard to guess words taken from https://danq.me/2013/12/15/hangman/
+  * 5 hard to guess words taken from [DANQ](https://danq.me/2013/12/15/hangman/)
 
 #### Acknowlegdements
   * Inspiration for ReadMe came from the Code Institute Sample ReadMe, Code Institue ReadMe template, my own Project 1 ReadMe and suggestions from my Project 1 assesor.
   * My mentor Martina Terlevic for fantastic guidance.
   * Slack community.
-  * 

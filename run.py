@@ -45,6 +45,8 @@ def welcome():
             main()
         else:
             print("Invalid character. Please enter y if you'd like to play.\n")
+            
+            # Clear terminal code from Scaler
             sleep(2)
 
             os.system('cls')
@@ -66,7 +68,6 @@ def get_name():
         else:
             print("Your name can only use letters. Please try again.\n")
 
-    # Clear terminal code from Scaler
     sleep(2)
 
     os.system('cls')
