@@ -5,7 +5,15 @@ This is a Hangman game created in Python. It runs in the Code Institute mock ter
 ---
 
 ### Table of Contents
-
+* [Responsive Mockup](https://github.com/sblakedev/Project-3/blob/main/README.md#responsive-mockup)
+* [Design](https://github.com/sblakedev/Project-3/blob/main/README.md#design)
+* [User Experience](https://github.com/sblakedev/Project-3/blob/main/README.md#user-experience)
+* [Features](https://github.com/sblakedev/Project-3/blob/main/README.md#features)
+* [Technologies Used](https://github.com/sblakedev/Project-3/blob/main/README.md#technologies-used)
+* [Testing](https://github.com/sblakedev/Project-3/blob/main/README.md#testing)
+* [Future Features](https://github.com/sblakedev/Project-3/blob/main/README.md#future-features)
+* [Deployment](https://github.com/sblakedev/Project-3/blob/main/README.md#deployment)
+* [Credits](https://github.com/sblakedev/Project-3/blob/main/README.md#credits)
 
 ---
 
