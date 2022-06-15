@@ -45,7 +45,7 @@ def welcome():
             main()
         else:
             print("Invalid character. Please enter y if you'd like to play.\n")
-            
+
             # Clear terminal code from Scaler
             sleep(2)
 
