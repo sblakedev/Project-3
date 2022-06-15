@@ -86,6 +86,7 @@ This is a visual representation of the functions in the program and how they wor
 6. GitHub - This was used to store the projects code after being pushed from Git.
 7. Git - This was used for version control by utilizing the Gitpod terminal to commit to Git.
 8. Heroku - This was used to deploy the live version
+9. Lucid - This was used to create the flow chart.
 
 ---
 
