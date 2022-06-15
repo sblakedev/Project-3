@@ -141,7 +141,28 @@ In the future, features to include are:
 ---
 
 ### Deployment
-
+#### Heroku
+1. Log in to Heroku
+2. On the dashboard, under user profile, click New and Create New App
+3. Name app and set region to Europe. Click Create App
+4. Click on the settings tab
+5. Click on Reveal Config Vars
+6. In the Key box, type CREDS
+7. Copy the CREDS.json file from workspace and copy into Value box
+8. Click Add
+9. In the Key box underneath, type PORT
+10. In the Value box, type 8000
+11. Scroll down to Buildpacks and click Add buildpack
+12. Click Python and then click Save changes
+13. Click Add buildpack again, and click node.js. Click Save changes
+14. The Python buildpack must be above the node.js buildpack
+15. Go back to the top of the page and click on the Deploy tab
+16. Scroll down to Deployment method and choose GitHub
+17. Search for the repository that you want to connect to
+18. Click Connect beside the repository you want to connect to
+19. Scroll down to Automatic Deploys
+20. Under Cgoose a branch to deploy, choose Main
+21. Click Enable Automatic Deploys
 
 ---
 
