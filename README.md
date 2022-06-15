@@ -14,6 +14,12 @@ This is a Hangman game created in Python. It runs in the Code Institute mock ter
 
 ---
 
+### Design
+This is a visual representation of the functions in the program and how they work.
+![Flow Chart](assets/images/readme/Hangman_FlowChart.png)
+
+---
+
 ### User Experience
 #### User Stories
 * User Goals
